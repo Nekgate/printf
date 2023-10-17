@@ -16,7 +16,7 @@ int nnprint_char(va_list types, char buffer[],
 {
 	char c = va_arg(types, int);
 
-	return (handle_write_char(c, buffer, flags, width, precision, size));
+	return (nnhandle_write_char(c, buffer, flags, width, precision, size));
 }
 /* This prints a String */
 /**
@@ -115,7 +115,7 @@ int nnprint_int(va_list types, char buffer[],
 	long int n = va_arg(types, long int);
 	unsigned long int num;
 
-	n = convert_size_number(n, size);
+	n = nnconvert_size_number(n, size);
 
 	if (n == 0)
 		buffer[i--] = '0';
@@ -137,7 +137,7 @@ int nnprint_int(va_list types, char buffer[],
 
 	i++;
 
-	return (write_number(is_negative, i, buffer, flags, width, precision, size));
+	return (nnwrite_number(is_negative, i, buffer, flags, width, precision, size));
 }
 
 /* This Print Binary */

@@ -17,7 +17,7 @@ int nnprint_unsigned(va_list types, char buffer[],
 	int i = BUFF_SIZE - 2;
 	unsigned long int num = va_arg(types, unsigned long int);
 
-	num = convert_size_unsgnd(num, size);
+	num = nnconvert_size_unsgnd(num, size);
 
 	if (num == 0)
 		buffer[i--] = '0';
@@ -32,7 +32,7 @@ int nnprint_unsigned(va_list types, char buffer[],
 
 	i++;
 
-	return (write_unsgnd(0, i, buffer, flags, width, precision, size));
+	return (nnwrite_unsgnd(0, i, buffer, flags, width, precision, size));
 }
 
 /* This Prints unsigned number in Octal */
@@ -56,7 +56,7 @@ int nnprint_octal(va_list types, char buffer[],
 
 	UNUSED(width);
 
-	num = convert_size_unsgnd(num, size);
+	num = nnconvert_size_unsgnd(num, size);
 
 	if (num == 0)
 		buffer[i--] = '0';
@@ -74,7 +74,7 @@ int nnprint_octal(va_list types, char buffer[],
 
 	i++;
 
-	return (write_unsgnd(0, i, buffer, flags, width, precision, size));
+	return (nnwrite_unsgnd(0, i, buffer, flags, width, precision, size));
 }
 
 /* This Prints unsigned number in Hex */
@@ -91,7 +91,7 @@ int nnprint_octal(va_list types, char buffer[],
 int nnprint_hexadecimal(va_list types, char buffer[],
 	int flags, int width, int precision, int size)
 {
-	return (print_hexa(types, "0123456789abcdef", buffer,
+	return (nnprint_hexa(types, "0123456789abcdef", buffer,
 		flags, 'x', width, precision, size));
 }
 
@@ -109,7 +109,7 @@ int nnprint_hexadecimal(va_list types, char buffer[],
 int nnprint_hexa_upper(va_list types, char buffer[],
 	int flags, int width, int precision, int size)
 {
-	return (print_hexa(types, "0123456789ABCDEF", buffer,
+	return (nnprint_hexa(types, "0123456789ABCDEF", buffer,
 		flags, 'X', width, precision, size));
 }
 
@@ -136,7 +136,7 @@ int nnprint_hexa(va_list types, char map_to[], char buffer[],
 
 	UNUSED(width);
 
-	num = convert_size_unsgnd(num, size);
+	num = nnconvert_size_unsgnd(num, size);
 
 	if (num == 0)
 		buffer[i--] = '0';
@@ -157,5 +157,5 @@ int nnprint_hexa(va_list types, char map_to[], char buffer[],
 
 	i++;
 
-	return (write_unsgnd(0, i, buffer, flags, width, precision, size));
+	return (nnwrite_unsgnd(0, i, buffer, flags, width, precision, size));
 }

@@ -89,8 +89,8 @@ int nnis_printable(char);
 int nnappend_hexa_code(char, char[], int);
 int nnis_digit(char);
 
-long nnint convert_size_number(long int num, int size);
-long nnint convert_size_unsgnd(unsigned long int num, int size);
+long int nnconvert_size_number(long int num, int size);
+long int nnconvert_size_unsgnd(unsigned long int num, int size);
 
 #endif
 
