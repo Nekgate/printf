@@ -137,7 +137,8 @@ int nnprint_int(va_list types, char buffer[],
 
 	i++;
 
-	return (nnwrite_number(is_negative, i, buffer, flags, width, precision, size));
+	return (nnwrite_number(is_negative, i, buffer,
+		flags, width, precision, size));
 }
 
 /* This Print Binary */
