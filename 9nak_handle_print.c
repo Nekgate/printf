@@ -20,7 +20,8 @@ int nnhandle_print(const char *fmt, int *ind, va_list list, char buffer[],
 		{'c', nnprint_char}, {'s', nnprint_string}, {'%', nnprint_percent},
 		{'i', nnprint_int}, {'d', nnprint_int}, {'b', nnprint_binary},
 		{'u', nnprint_unsigned}, {'o', nnprint_octal}, {'x', nnprint_hexadecimal},
-		{'X', nnprint_hexa_upper}, {'p', nnprint_pointer}, {'S', nnprint_non_printable},
+		{'X', nnprint_hexa_upper}, {'p', nnprint_pointer},
+		{'S', nnprint_non_printable},
 		{'r', nnprint_reverse}, {'R', nnprint_rot13string}, {'\0', NULL}
 	};
 	for (i = 0; fmt_types[i].fmt != '\0'; i++)
